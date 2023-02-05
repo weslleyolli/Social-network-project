@@ -11,7 +11,7 @@ export function Comment() {
                 <div className={styles.commentContent}>
                     <header>
                         <div className={styles.authorAndTime}>
-                            <strong>Henrique Alves</strong>
+                            <strong>Davi Souza</strong>
                             <time title="2 of february at 23:11" dateTime="2023-02-02 23:11:30">published at 2 hour</time>
                         </div>
 
@@ -30,5 +30,6 @@ export function Comment() {
                 </footer>
             </div>
         </div>
+        
     )
 }
