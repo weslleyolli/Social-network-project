@@ -1,32 +1,39 @@
+import { format, formatDistanceToNow } from "date-fns"
+
 import { Avatar } from "./Avatar"
 import { Comment } from "./Commet"
+
 import styles from "./Post.module.css"
 
-export function Post(props) {
-    console.log(props)
+export function Post({ author, publishedAt, content}) {
+    const publishedDateFormated = format(publishedAt, "d 'of' LLLL 'at' HH:mm'h'")
+
+    const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+        addSuffix: true,
+    } )
 
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <Avatar hasBorder src="https://github.com/weslleyolli.png" />
+                    <Avatar hasBorder src={author.avatarUrl} />
                     <div className={styles.authorInfo}>
-                        <strong>Weslley Olli</strong>
-                        <span>Web Developer</span>
+                        <strong>{author.name}</strong>
+                        <span>{author.role}</span>
                     </div>
                 </div>
 
-                <time title="2 of february at 17:12" dateTime="2023-02-01 17:12:30">published at 1 hour</time>
+                <time title={publishedDateFormated} dateTime={publishedAt.toISOString()}>{publishedDateRelativeToNow}</time>
             </header>
 
             <div className={styles.content}>
-                <p>Hey guys 👋</p>
-                <p>I just uploaded another project to my portfolio. It's a project I did at NLW Return, a Rocketseat event. Project name is DoctorCare 🚀</p>
-                <p>👉 <a href="#">Weslley.design/doctorcare</a> </p>
-                <p> <a href="#">#newproject</a>{' '}
-                    <a href="#">#nlw</a> {' '}
-                    <a href="#">#rocketseat</a>
-                </p>
+                {content.map(line => {
+                    if(line.type === 'paragraph') {
+                        return <p>{line.content}</p>;
+                    }else if (line.type === 'link'){
+                        return <p><a href="#">{line.content}</a></p>;
+                    }
+                })}
             </div>
 
             <form className={styles.commentForm}>
