@@ -12,7 +12,9 @@ export function Comment({ content, onDeleteComment }) {
     }
 
     function hendleLikeComment() {
-        setLikeCount(likeCount + 1)
+        setLikeCount((state) => {
+            return state + 1
+        })
     }
 
 
