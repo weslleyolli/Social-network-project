@@ -1,10 +1,10 @@
-- [Layout](<<p align="center">
+<p align="center">
   <img src="https://img.shields.io/static/v1?label=Taught%20by&message=Rocketseat&color=white&labelColor=8257E5" alt="Taught by Rocketseat">
   <img src="https://img.shields.io/github/forks/weslleyolli/nlw-setup-ignite?label=forks&message=MIT&color=white&labelColor=8257E5" alt="Forks">
   <img src="https://img.shields.io/github/stars/weslleyolli/nlw-setup-ignite?label=stars&message=MIT&color=white&labelColor=8257E5" alt="Stars">
 </p>
 <p align="center">
-    <img src="./01-fundamentals-reactjs-ts/src/assests/Preview social network.png" alt="Preview">
+    <img src="./01-fundamentals-reactjs-ts/src/assets/preview-social-network.png" alt="Preview">
 </p>
 
 
